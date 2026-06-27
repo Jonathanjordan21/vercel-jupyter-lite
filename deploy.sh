@@ -66,9 +66,9 @@ print(empack.file_patterns.__file__)
 print(dir(empack.file_patterns))
 PY
 
-sed -n '1,60p' /vercel/path0/.vercel_python_packages/jupyterlite_xeus/add_on.py
-grep -n "DEFAULT_CONFIG_PATH" \
-/vercel/path0/.vercel_python_packages/empack/file_patterns.py
+# sed -n '1,60p' /vercel/path0/.vercel_python_packages/jupyterlite_xeus/add_on.py
+# grep -n "DEFAULT_CONFIG_PATH" \
+# /vercel/path0/.vercel_python_packages/empack/file_patterns.py
 
 micromamba run -n jupyterenv python - <<'PY'
 import empack.pack
