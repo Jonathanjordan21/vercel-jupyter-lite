@@ -37,11 +37,23 @@ micromamba run -n jupyterenv python -m pip show jupyterlite-xeus | grep Requires
 micromamba run -n jupyterenv python - <<'PY'
 import inspect
 import jupyterlite_xeus.add_on
-print(inspect.getsource(jupyterlite_xeus.add_on.pack_prefix))
+
+print(jupyterlite_xeus.add_on.__file__)
 PY
 
 grep -n "DEFAULT_CONFIG_PATH" \
-$(python -c "import jupyterlite_xeus.add_on as a; print(a.__file__)")
+$(micromamba run -n jupyterenv python - <<'PY'
+import jupyterlite_xeus.add_on
+print(jupyterlite_xeus.add_on.__file__)
+PY
+)
+
+grep -n "pkg_file_filter_from_yaml" \
+$(micromamba run -n jupyterenv python - <<'PY'
+import jupyterlite_xeus.add_on
+print(jupyterlite_xeus.add_on.__file__)
+PY
+)
 
 micromamba run -n jupyterenv python -c "import empack.file_patterns as fp; print(fp.DEFAULT_CONFIG_PATH)"
 
