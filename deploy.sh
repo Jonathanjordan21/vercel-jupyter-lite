@@ -23,6 +23,8 @@ micromamba create -n jupyterenv python=3.12 -c conda-forge -y
 # Install dependencies via pip in the micromamba environment
 micromamba run -n jupyterenv python -m pip install -r requirements.txt
 
+micromamba install -n jupyterenv -c conda-forge jupyterlite-xeus
+
 # Build JupyterLite
 micromamba run -n jupyterenv jupyter lite --version
 
@@ -63,6 +65,10 @@ print(empack.__file__)
 print(empack.file_patterns.__file__)
 print(dir(empack.file_patterns))
 PY
+
+sed -n '1,60p' /vercel/path0/.vercel_python_packages/jupyterlite_xeus/add_on.py
+grep -n "DEFAULT_CONFIG_PATH" \
+/vercel/path0/.vercel_python_packages/empack/file_patterns.py
 
 micromamba run -n jupyterenv python -c "import empack.file_patterns as fp; print(fp.DEFAULT_CONFIG_PATH)"
 
