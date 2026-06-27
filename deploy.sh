@@ -70,7 +70,11 @@ sed -n '1,60p' /vercel/path0/.vercel_python_packages/jupyterlite_xeus/add_on.py
 grep -n "DEFAULT_CONFIG_PATH" \
 /vercel/path0/.vercel_python_packages/empack/file_patterns.py
 
-micromamba run -n jupyterenv python -c "import empack.file_patterns as fp; print(fp.DEFAULT_CONFIG_PATH)"
+micromamba run -n jupyterenv python - <<'PY'
+import empack.pack
+print(empack.pack.__file__)
+print("DEFAULT_CONFIG_PATH =", empack.pack.DEFAULT_CONFIG_PATH)
+PY
 
 rm -rf dist .jupyterlite
 # micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
