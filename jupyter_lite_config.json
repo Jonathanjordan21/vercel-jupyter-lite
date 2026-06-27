@@ -1,0 +1,6 @@
+{
+  "XeusPythonEnv": {
+    "environment_file": "environment.yml",
+    "kernel_name": "python"
+  }
+}
