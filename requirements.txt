@@ -7,8 +7,8 @@ jupyterlab
 jupyterlite-core
 notebook
 jupyterlite-pyodide-kernel
-jupyterlite-xeus
-jupyterlite-javascript-kernel
+# jupyterlite-xeus
+# jupyterlite-javascript-kernel
 
 # Python kernel (optional)
 # jupyterlite-pyodide-kernel==0.6.1
