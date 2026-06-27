@@ -1,0 +1,11 @@
+[project]
+name = "my-jupyterlite-site"
+version = "0.1.0"
+
+[tool.jupyterlite]
+contents = "content"
+output_dir = "dist"
+
+[tool.jupyterlite.xeus_python_env]
+environment_file = "environment.yml"
+kernel_name = "python"
