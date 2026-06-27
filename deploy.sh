@@ -76,7 +76,13 @@ print(empack.pack.__file__)
 print("DEFAULT_CONFIG_PATH =", empack.pack.DEFAULT_CONFIG_PATH)
 PY
 
-rm -rf dist .jupyterlite
+sed -n '1,120p' /vercel/path0/.vercel_python_packages/empack/pack.py
+
+grep -n "DEFAULT_CONFIG_PATH" /vercel/path0/.vercel_python_packages/empack/pack.py
+
+
+
+# rm -rf dist .jupyterlite
 # micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
 
 # Build with explicit config file
