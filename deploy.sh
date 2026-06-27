@@ -46,7 +46,12 @@ rm -rf dist .jupyterlite
 # micromamba run -n jupyterenv jupyter lite build --help-all | grep -i "environment"
 # micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
 # Build with explicit config file
-micromamba run -n jupyterenv jupyter lite build \
+micromamba run -n jupyterenv \
+    jupyter lite build \
     --contents content \
     --output-dir dist \
-    --config "$PWD/lite_config.py"
+    --XeusAddon.environment_file=environment.yml
+# micromamba run -n jupyterenv jupyter lite build \
+#     --contents content \
+#     --output-dir dist \
+#     --config "$PWD/lite_config.py"
