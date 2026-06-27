@@ -33,6 +33,16 @@ ls -la environment.yml jupyter_lite_config.json || true
 micromamba run -n jupyterenv python -m pip show jupyterlite-xeus
 micromamba run -n jupyterenv python -m pip show empack
 micromamba run -n jupyterenv python -m pip show jupyterlite-xeus | grep Requires
+
+micromamba run -n jupyterenv python - <<'PY'
+import inspect
+import jupyterlite_xeus.add_on
+print(inspect.getsource(jupyterlite_xeus.add_on.pack_prefix))
+PY
+
+grep -n "DEFAULT_CONFIG_PATH" \
+$(python -c "import jupyterlite_xeus.add_on as a; print(a.__file__)")
+
 micromamba run -n jupyterenv python -c "import empack.file_patterns as fp; print(fp.DEFAULT_CONFIG_PATH)"
 
 rm -rf dist .jupyterlite
