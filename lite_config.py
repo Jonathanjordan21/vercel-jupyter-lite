@@ -11,5 +11,7 @@ c.XeusPythonEnv.pack_config = os.path.join(os.getcwd(), "pack_config.yml")
 
 c.XeusPythonEnv.kernel_name = "python"
 
+c.PyodideKernel.pyodide_url = "https://cdn.jsdelivr.net/pyodide/v0.24.1/full/"
+
 print(f"✅ environment_file = {c.XeusPythonEnv.environment_file}")
 print(f"✅ pack_config      = {c.XeusPythonEnv.pack_config}")
