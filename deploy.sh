@@ -40,5 +40,10 @@ ls -la environment.yml jupyter_lite_config.json || true
 #     --output-dir dist \
 #     --XeusPythonEnv.environment_file=environment.yml \
 #     --XeusPythonEnv.kernel_name=python
-micromamba run -n jupyterenv jupyter lite build --help-all | grep -i "environment"
-micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
+# micromamba run -n jupyterenv jupyter lite build --help-all | grep -i "environment"
+# micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
+# Build with explicit config file
+micromamba run -n jupyterenv jupyter lite build \
+    --contents content \
+    --output-dir dist \
+    --config "$PWD/lite_config.py"
