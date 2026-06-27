@@ -9,7 +9,7 @@ notebook
 jupyterlite-pyodide-kernel
 jupyterlite-xeus
 jupyterlite-javascript-kernel
-empack==5.1.2
+empack==5.0.0
 
 # Python kernel (optional)
 # jupyterlite-pyodide-kernel==0.6.1
