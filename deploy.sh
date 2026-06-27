@@ -55,6 +55,15 @@ print(jupyterlite_xeus.add_on.__file__)
 PY
 )
 
+micromamba run -n jupyterenv python - <<'PY'
+import empack
+import empack.file_patterns
+
+print(empack.__file__)
+print(empack.file_patterns.__file__)
+print(dir(empack.file_patterns))
+PY
+
 micromamba run -n jupyterenv python -c "import empack.file_patterns as fp; print(fp.DEFAULT_CONFIG_PATH)"
 
 rm -rf dist .jupyterlite
