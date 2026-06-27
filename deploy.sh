@@ -28,9 +28,27 @@ micromamba install -n jupyterenv \
     empack
 micromamba install -n jupyterenv -c conda-forge jupyterlite-xeus
 
+micromamba run -n jupyterenv python - <<'PY'
+import sys
+import jupyterlite_xeus
+import empack.pack
+
+print("python =", sys.executable)
+print("jupyterlite_xeus =", jupyterlite_xeus.__file__)
+print("empack.pack =", empack.pack.__file__)
+print("DEFAULT_CONFIG_PATH =", empack.pack.DEFAULT_CONFIG_PATH)
+PY
+
+unset PYTHONPATH
+unset PYTHONHOME
 
 # Build JupyterLite
 micromamba run -n jupyterenv jupyter lite --version
+
+micromamba run -n jupyterenv python - <<'PY'
+import sys
+print(sys.path)
+PY
 
 # Debug: confirm files are present
 echo "Current directory: $(pwd)"
