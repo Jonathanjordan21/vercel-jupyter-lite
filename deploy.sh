@@ -31,7 +31,7 @@ echo "Current directory: $(pwd)"
 ls -la environment.yml jupyter_lite_config.json || true
 
 rm -rf dist .jupyterlite
-micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
+# micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
 
 # Build with explicit config file
 # micromamba run -n jupyterenv jupyter lite build \
@@ -46,7 +46,7 @@ micromamba run -n jupyterenv jupyter lite build --contents content --output-dir 
 # micromamba run -n jupyterenv jupyter lite build --help-all | grep -i "environment"
 # micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
 # Build with explicit config file
-# micromamba run -n jupyterenv jupyter lite build \
-#     --contents content \
-#     --output-dir dist \
-#     --config "$PWD/lite_config.py"
+micromamba run -n jupyterenv jupyter lite build \
+    --contents content \
+    --output-dir dist \
+    --config "$PWD/lite_config.py"
