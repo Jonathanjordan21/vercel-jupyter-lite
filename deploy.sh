@@ -23,7 +23,7 @@ micromamba create -n jupyterenv python=3.12 -c conda-forge -y
 # Install dependencies via pip in the micromamba environment
 micromamba run -n jupyterenv python -m pip install -r requirements.txt
 
-micromamba install -n jupyterenv -c conda-forge jupyterlite-xeus
+# micromamba install -n jupyterenv -c conda-forge jupyterlite-xeus
 
 # Build JupyterLite
 micromamba run -n jupyterenv jupyter lite --version
