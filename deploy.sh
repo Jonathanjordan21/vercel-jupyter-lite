@@ -31,7 +31,7 @@ echo "Current directory: $(pwd)"
 ls -la environment.yml jupyter_lite_config.json || true
 
 # Build with explicit config file
-micromamba run -n jupyterenv jupyter lite build --help-all | grep -i xeus \
+micromamba run -n jupyterenv jupyter lite build \
     --contents content \
     --output-dir dist \
     --config "$PWD/jupyter_lite_config.json"
