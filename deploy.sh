@@ -25,9 +25,10 @@ micromamba run -n jupyterenv python -m pip install -r requirements.txt
 
 # Build JupyterLite
 micromamba run -n jupyterenv jupyter lite --version
-micromamba run -n jupyterenv jupyter lite build \
-    --contents content \
-    --output-dir dist \
-    --XeusPythonEnv.environment_file=environment.yml \
-    --XeusPythonEnv.kernel_name=python
+micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
+# micromamba run -n jupyterenv jupyter lite build \
+#     --contents content \
+#     --output-dir dist \
+#     --XeusPythonEnv.environment_file=environment.yml \
+#     --XeusPythonEnv.kernel_name=python
 # micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
