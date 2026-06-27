@@ -25,7 +25,16 @@ micromamba run -n jupyterenv python -m pip install -r requirements.txt
 
 # Build JupyterLite
 micromamba run -n jupyterenv jupyter lite --version
-micromamba run -n jupyterenv jupyter lite build --contents content --output-dir dist
+
+# Debug: confirm files are present
+echo "Current directory: $(pwd)"
+ls -la environment.yml jupyter_lite_config.json || true
+
+# Build with explicit config file
+micromamba run -n jupyterenv jupyter lite build \
+    --contents content \
+    --output-dir dist \
+    --config "$PWD/jupyter_lite_config.json"
 # micromamba run -n jupyterenv jupyter lite build \
 #     --contents content \
 #     --output-dir dist \
