@@ -12,6 +12,7 @@ jupyterlite-pyodide-kernel==0.6.1
 
 # Python Xeus kernel (optional)
 # jupyterlite-xeus>=4.0.1
+jupyterlite-xeus
 
 # JavaScript kernel (optional)
 jupyterlite-javascript-kernel==0.3.0
