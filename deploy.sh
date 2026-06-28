@@ -26,7 +26,14 @@ micromamba run -n jupyterenv python -m pip install -r requirements.txt
 micromamba install -n jupyterenv \
     -c conda-forge \
     empack
-micromamba install -n jupyterenv -c conda-forge jupyterlite-xeus
+# micromamba install -n jupyterenv -c conda-forge jupyterlite-xeus
+
+micromamba install -n jupyterenv -c conda-forge \
+    jupyterlite-core \
+    jupyterlite-xeus \
+    jupyterlite-pyodide-kernel \
+    jupyterlab \
+    notebook
 
 micromamba run -n jupyterenv python - <<'PY'
 import sys
