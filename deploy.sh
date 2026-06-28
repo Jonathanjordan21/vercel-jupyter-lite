@@ -105,9 +105,9 @@ print(empack.pack.__file__)
 print("DEFAULT_CONFIG_PATH =", empack.pack.DEFAULT_CONFIG_PATH)
 PY
 
-sed -n '1,120p' /vercel/path0/.vercel_python_packages/empack/pack.py
+# sed -n '1,120p' /vercel/path0/.vercel_python_packages/empack/pack.py
 
-grep -n "DEFAULT_CONFIG_PATH" /vercel/path0/.vercel_python_packages/empack/pack.py
+# grep -n "DEFAULT_CONFIG_PATH" /vercel/path0/.vercel_python_packages/empack/pack.py
 
 
 
